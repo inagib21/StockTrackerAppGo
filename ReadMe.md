@@ -1,6 +1,9 @@
 ## Real-Time Stock Candle Tracker
 <div style="display: flex; justify-content: space-between; max-width: 500px;">
   <img width="225" alt="Screen Shot 2024-09-01 at 11 49 10 PM" src="https://github.com/user-attachments/assets/5b46cb7b-416d-447c-86ae-f4d30d4e2d83">
+
+
+  
   <img width="236" alt="Screen Shot 2024-09-01 at 11 50 57 PM" src="https://github.com/user-attachments/assets/e56934fe-48e0-4b29-8de7-0e059d1b8755">
 </div>
 
