@@ -2,8 +2,7 @@ package main
 
 import "time"
 
-//Candle Struct represents a single OHLC(Open, High, Low, Close) candle
-
+// Candle struct represents a single OHLC (High, Low, Open, Close) candle
 type Candle struct {
 	Symbol    string    `json:"symbol"`
 	Open      float64   `json:"open"`
@@ -13,7 +12,7 @@ type Candle struct {
 	Timestamp time.Time `json:"timestamp"`
 }
 
-// TempCandle represents and item from the temp candle slice builiding the candles
+// TempCandle represents an item from the temp candle slice building the candles
 type TempCandle struct {
 	Symbol     string
 	OpenTime   time.Time
@@ -22,15 +21,14 @@ type TempCandle struct {
 	ClosePrice float64
 	HighPrice  float64
 	LowPrice   float64
-	volume     float64
+	Volume     float64
 }
 
-// structure of the data that comes from the Finnhub ws api
+// Structure of the data that comes from the Finnhub ws api
 type FinnhubMessage struct {
 	Data []TradeData `json:"data"`
-	Type string      `json:"type"`
+	Type string      `json:"type"` // ping | trade
 }
-
 type TradeData struct {
 	Close     []string `json:"c"`
 	Price     float64  `json:"p"`
@@ -39,21 +37,21 @@ type TradeData struct {
 	Volume    int      `json:"v"`
 }
 
-// Data to write to clients  connected
-type BroadcastMessaage struct {
-	UpdateType UpdateType `json:"updateType"`
+// Data to write to clients connected
+type BroadcastMessage struct {
+	UpdateType UpdateType `json:"updateType"` // "live" | "closed"
 	Candle     *Candle    `json:"candle"`
 }
 
 type UpdateType string
 
 const (
-	Live   UpdateType = "live"  // Real time ongoing candle
-	Closed UpdateType = "close" // Past candle. Already cloesd
+	Live   UpdateType = "live"   // Real time ongoing candle
+	Closed UpdateType = "closed" // Past candle. Already closed
 )
 
-// Converts a tempCodanlde into a candle
-func (tc *TempCandle) toCaandle() *Candle {
+// Converts a tempCandle into a Candle
+func (tc *TempCandle) toCandle() *Candle {
 	return &Candle{
 		Symbol:    tc.Symbol,
 		Open:      tc.OpenPrice,
