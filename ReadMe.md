@@ -63,7 +63,7 @@ This project is a real-time stock candle tracker that provides live updates on s
 1. Start the backend server:
    ```
    cd backend
-  make start
+     make start
    ```
 
 2. In a new terminal, start the React Native app:
