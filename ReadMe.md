@@ -1,4 +1,6 @@
 ## Real-Time Stock Candle Tracker
+<img width="225" alt="Screen Shot 2024-09-01 at 11 49 10 PM" src="https://github.com/user-attachments/assets/5b46cb7b-416d-447c-86ae-f4d30d4e2d83">
+
 ### Overview
 This project is a real-time stock candle tracker that provides live updates on stock prices for multiple symbols. It consists of a Go backend server that connects to Finnhub's WebSocket API for live trade data and a mobile frontend built with Expo.
  ## Features
